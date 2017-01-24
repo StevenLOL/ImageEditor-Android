@@ -24,6 +24,7 @@
 
     <string-array name="fliters">
         <item>origin</item>
+        <item>black2color</item>
         <item>soft</item>
         <item>black</item>
         <item>classic</item>

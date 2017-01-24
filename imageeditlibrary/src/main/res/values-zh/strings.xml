@@ -20,6 +20,7 @@
 
     <string-array name="fliters">
         <item>原始</item>
+        <item>上色</item>
         <item>软化</item>
         <item>黑白</item>
         <item>经典</item>

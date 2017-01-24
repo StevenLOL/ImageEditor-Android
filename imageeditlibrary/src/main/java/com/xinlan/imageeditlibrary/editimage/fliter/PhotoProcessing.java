@@ -12,46 +12,56 @@ import com.xinlan.imageeditlibrary.R;
  */
 public class PhotoProcessing {
     private static final String TAG = "PhotoProcessing";
+    public static Bitmap black2color(Bitmap bitmap){
+        //TODO: change this RPC call
 
+        return bitmap;
+    }
 
     public static Bitmap filterPhoto(Bitmap bitmap, int position) {
         if (bitmap != null) {
+            if (position== 1) {
+                Bitmap tempbitmap = black2color(bitmap);
+                return tempbitmap;
+            }
             sendBitmapToNative(bitmap);
         }
         switch (position) {
             case 0: // Original
                 break;
-            case 1: // Instafix
+
+            //break;
+            case 2: // Instafix
                 nativeApplyInstafix();
                 break;
-            case 2: // Ansel
+            case 3: // Ansel
                 nativeApplyAnsel();
                 break;
-            case 3: // Testino
+            case 4: // Testino
                 nativeApplyTestino();
                 break;
-            case 4: // XPro
+            case 5: // XPro
                 nativeApplyXPro();
                 break;
-            case 5: // Retro
+            case 6: // Retro
                 nativeApplyRetro();
                 break;
-            case 6: // Black & White
+            case 7: // Black & White
                 nativeApplyBW();
                 break;
-            case 7: // Sepia
+            case 8: // Sepia
                 nativeApplySepia();
                 break;
-            case 8: // Cyano
+            case 9: // Cyano
                 nativeApplyCyano();
                 break;
-            case 9: // Georgia
+            case 10: // Georgia
                 nativeApplyGeorgia();
                 break;
-            case 10: // Sahara
+            case 11: // Sahara
                 nativeApplySahara();
                 break;
-            case 11: // HDR
+            case 12: // HDR
                 nativeApplyHDR();
                 break;
         }

@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.CAMERA},
+                    new String[]{Manifest.permission.CAMERA,Manifest.permission.READ_EXTERNAL_STORAGE},
                     REQUEST_PERMISSON_CAMERA);
             return;
         }
@@ -168,12 +168,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == REQUEST_PERMISSON_SORAGE
-                && grantResults.length > 0
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            openAblum();
-            return;
-        }//end if
 
         if (requestCode == REQUEST_PERMISSON_CAMERA
                 && grantResults.length > 0
@@ -181,6 +175,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             doTakePhoto();
             return;
         }//end if
+
+
+        if (requestCode == REQUEST_PERMISSON_SORAGE
+                && grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            openAblum();
+            return;
+        }//end if
+
+
     }
 
     @Override
